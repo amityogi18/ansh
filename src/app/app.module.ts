@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,18 +34,16 @@ import { AddEditEmployeeComponent } from './add-edit-employee/add-edit-employee.
       {
         path:'employee', 
         component: EmployeeDetailsComponent,
-        children: [
-          {
-            path: 'add',
-            component: AddEditEmployeeComponent
-          }, 
-          {
-            path: ':id/edit',
-            component: AddEditEmployeeComponent
-          }
-         
-        ]
+        
       },
+      {
+        path: 'employee/add',
+        component: AddEditEmployeeComponent,
+      },
+      {
+        path: 'employee/:id/edit',
+        component: AddEditEmployeeComponent
+      }
 
     ], 
     { useHash : true })

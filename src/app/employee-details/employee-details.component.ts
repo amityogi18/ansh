@@ -52,7 +52,6 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   addEmployee(){
-    debugger;
     this.router.navigate(['/employee/add']);
   }
 
