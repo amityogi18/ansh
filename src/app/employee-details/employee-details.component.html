@@ -1,0 +1,39 @@
+
+
+<input type='text' [(ngModel)]='searchName' placeholder="Search By Name" />
+
+<select [(ngModel)] ='fieldName' placeholder = 'Select'>
+    <option value = 'id'>S.No</option>
+    <option value = 'name'>Name</option>
+    <option value = 'phone'>Phone</option>
+    <option value = 'address.city'>City</option>
+    <option value = 'address.address_1'>Address_1</option>
+    <option value = 'address.address_2'>Address_2</option>
+    <option value = 'address.postal_code'>Postal Code</option>
+  </select>
+
+  <a [routerLink]="['/employee','add']" routerLinkActive="active">ADD NEW</a>
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Name</th> 
+    <th>Phone</th>
+    <th>City</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>Postal Code</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor = 'let employee of employeeList | searchByName : searchName | sortBy: fieldName '>
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td> 
+    <td *ngIf = 'isNotNumber(employee.phone)'>NA</td>
+    <td *ngIf = '!isNotNumber(employee.phone)'>{{employee.phone}}</td>
+    <td>{{employee.address.city}}</td>
+    <td>{{employee.address.address_line1}}</td>
+    <td>{{employee.address.address_line2}}</td>
+    <td>{{employee.address.postal_code}}</td>
+    <td> <a  [routerLink]="['/employee', employee.id, 'edit']" routerLinkActive="active" >EDIT</a></td>
+  </tr>
+
+</table>

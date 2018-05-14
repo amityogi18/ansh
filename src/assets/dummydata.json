@@ -1,0 +1,35 @@
+{
+    "data":[{
+        "id":   1,
+        "name": "Jhon",
+        "phone": "AZ99A99PQ8",
+        "address": {
+            "city": "Pune",
+            "address_line1":"ABC Road",
+            "address_line2":"XYZ Building",
+            "postal_code":"12455"
+        }
+     },
+     {
+        "id":   2,
+        "name": "Jacob",
+        "phone": "AZ99A99PQ8",
+        "address": {
+            "city": "Indore",
+            "address_line1":"PQR Road",
+            "address_line2":"ABC Building",
+            "postal_code":"13455"
+        }
+     },{
+        "id":   3,
+        "name": "Ari",
+        "phone": 7777777777,
+        "address": {
+            "city": "Pune",
+            "address_line1":"ABC Road",
+            "address_line2":"XYZ Building",
+            "postal_code":"12455"
+        }
+     }]
+
+}
